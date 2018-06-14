@@ -1,0 +1,21 @@
+{
+  "name": "dude",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node .",
+    "dev": "nodemon . -e pug,js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3",
+    "pug": "^2.0.3",
+    "uikit": "^3.0.0-rc.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5"
+  }
+}

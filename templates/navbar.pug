@@ -1,0 +1,8 @@
+mixin navbar(token)
+  nav.uk-navbar-container.uk-margin(uk-navbar='')
+    .uk-navbar-left
+      a.uk-navbar-item.uk-logo(href='#') dude
+    .uk-navbar-right
+      .uk-navbar-item
+        input#token.uk-input.uk-form-width-large(type='text', placeholder='Token', value= token)
+        button#generate.uk-button.uk-button-default(onclick='generate();') Generate
