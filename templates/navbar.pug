@@ -4,5 +4,11 @@ mixin navbar(token)
       a.uk-navbar-item.uk-logo(href='#') dude
     .uk-navbar-right
       .uk-navbar-item
-        input#token.uk-input.uk-form-width-large(type='text', placeholder='Token', value= token)
-        button#generate.uk-button.uk-button-default(onclick='generate();') Generate
+        if token.length > 0
+          input#token.uk-input.uk-form-width-large(type='text', placeholder='Token', value= token, hidden)
+        else
+          input#token.uk-input.uk-form-width-large(type='text', placeholder='Token', value= token)
+        if token.length == 0
+          button#generate.uk-button.uk-button-default(onclick='register();') Register
+        else
+          button#toggleBtn.uk-button.uk-button-default(onclick='toggle();') Show

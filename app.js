@@ -11,7 +11,7 @@ const home = pug.compileFile('templates/home.pug');
 
 app.get('/', function (req, res) {
   res.send(home({
-    token: ''
+    token: 'sd'
   }));
 });
 

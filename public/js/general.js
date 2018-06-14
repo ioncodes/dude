@@ -1,22 +1,35 @@
-var tokenRegex = /[{(]?[0-9A-Fa-f]{8}[-]?([0-9A-Fa-f]{4}[-]?){3}[0-9A-Fa-f]{12}[)}]?/;
+function register() {
+  token.value = '??';
+  generate.innerText = 'Login';
+}
+
+function login() {
+  console.log("login");
+}
+
+function toggle() {
+  token.hidden = !token.hidden;
+  if(token.hidden) {
+    toggleBtn.innerText = 'Show';
+  } else {
+    toggleBtn.innerText = 'Hide';
+  }
+}
 
 onload = function () {
   var token = document.getElementById('token');
   var generate = document.getElementById('generate');
+  var toggleBtn = document.getElementById('toggleBtn');
 
   token.oninput = () => {
-    generate.innerText = 'Login';
     let value = token.value;
-    if(tokenRegex.exec(value)) {
-      token.classList.add('uk-form-success');
-      token.classList.remove('uk-form-danger');
+    if(value == '') {
+      generate.innerText = 'Register';
+      generate.onclick = register;
+      return;
     } else {
-      token.classList.add('uk-form-danger');
-      token.classList.remove('uk-form-success');
+      generate.innerText = 'Login';
+      generate.onclick = login;
     }
   }
-}
-
-function generate() {
-  console.log('generate');
 }
