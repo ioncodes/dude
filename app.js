@@ -4,6 +4,7 @@ const app = express();
 
 app.set('view_engine', 'pug');
 app.use('/uikit', express.static(__dirname + '/node_modules/uikit/dist/'));
+app.use('/ace', express.static(__dirname + '/node_modules/ace-builds/src-min/'));
 app.use('/css', express.static(__dirname + '/public/css/'));
 app.use('/js', express.static(__dirname + '/public/js/'));
 
@@ -11,7 +12,7 @@ const home = pug.compileFile('templates/home.pug');
 
 app.get('/', function (req, res) {
   res.send(home({
-    token: 'sd'
+    home: true
   }));
 });
 

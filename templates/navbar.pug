@@ -1,14 +1,7 @@
-mixin navbar(token)
-  nav.uk-navbar-container.uk-margin(uk-navbar='')
+mixin navbar(home)
+  nav.uk-navbar-container(uk-navbar='')
     .uk-navbar-left
       a.uk-navbar-item.uk-logo(href='#') dude
-    .uk-navbar-right
-      .uk-navbar-item
-        if token.length > 0
-          input#token.uk-input.uk-form-width-large(type='text', placeholder='Token', value= token, hidden)
-        else
-          input#token.uk-input.uk-form-width-large(type='text', placeholder='Token', value= token)
-        if token.length == 0
-          button#generate.uk-button.uk-button-default(onclick='register();') Register
-        else
-          button#toggleBtn.uk-button.uk-button-default(onclick='toggle();') Show
+      ul.uk-navbar-nav
+        li(class= home ? 'uk-active' : '')
+          a(href='/') Home

@@ -1,7 +1,9 @@
-- var token = locals['token']
+- var home = locals['home']
 
 doctype html
 html
   include head.pug
   body
-    +navbar(token)
+    +navbar(home)
+    +editor()
+    include scripts.pug
